@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E9039ADD1A45DF8D000DD6F1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */; };
 		E907D1DE1A6AE4A000AB8075 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907D1DD1A6AE4A000AB8075 /* Semaphore.swift */; };
+		E92DEA7D1A7ABBF300019861 /* OBJCFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DEA7C1A7ABBF300019861 /* OBJCFuture.swift */; };
+		E92DEA801A7ABF7700019861 /* OBJCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E92DEA7F1A7ABF7700019861 /* OBJCTests.m */; };
 		E9319EA41A397D2C00A0604A /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9319EA31A397D2C00A0604A /* QueueTests.swift */; };
 		E979E5F41975B1AA007FE914 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E979E5F31975B1AA007FE914 /* FutureUtils.swift */; };
 		E9BD4A4919F3E43100BBD966 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BD4A4819F3E43100BBD966 /* Result.swift */; };
@@ -35,6 +37,9 @@
 /* Begin PBXFileReference section */
 		E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		E907D1DD1A6AE4A000AB8075 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
+		E92DEA7C1A7ABBF300019861 /* OBJCFuture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OBJCFuture.swift; sourceTree = "<group>"; };
+		E92DEA7E1A7ABF7700019861 /* BrightFuturesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrightFuturesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E92DEA7F1A7ABF7700019861 /* OBJCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBJCTests.m; sourceTree = "<group>"; };
 		E9319EA31A397D2C00A0604A /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		E979E5F31975B1AA007FE914 /* FutureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureUtils.swift; sourceTree = "<group>"; };
 		E9BD4A4819F3E43100BBD966 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -70,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E92DEA7B1A7ABBD500019861 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				E92DEA7C1A7ABBF300019861 /* OBJCFuture.swift */,
+			);
+			name = "Objective-C";
+			sourceTree = "<group>";
+		};
 		E9DF080B194470060083F7F2 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D923AB1A6CE29A00CADD9F /* InvalidationToken.swift */,
+				E92DEA7B1A7ABBD500019861 /* Objective-C */,
 				E9DF0831194470190083F7F2 /* ExecutionContext.swift */,
 				E9DF0832194470190083F7F2 /* Future.swift */,
 				E9BD4A4819F3E43100BBD966 /* Result.swift */,
@@ -119,7 +133,9 @@
 				E9DF0825194470060083F7F2 /* Supporting Files */,
 				E9319EA31A397D2C00A0604A /* QueueTests.swift */,
 				E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */,
+				E92DEA7F1A7ABF7700019861 /* OBJCTests.m */,
 				E9D923AD1A6CE69B00CADD9F /* InvalidationTokenTests.swift */,
+				E92DEA7E1A7ABF7700019861 /* BrightFuturesTests-Bridging-Header.h */,
 			);
 			path = BrightFuturesTests;
 			sourceTree = "<group>";
@@ -243,6 +259,7 @@
 				E979E5F41975B1AA007FE914 /* FutureUtils.swift in Sources */,
 				E9DF0836194470190083F7F2 /* Future.swift in Sources */,
 				E9DF0835194470190083F7F2 /* ExecutionContext.swift in Sources */,
+				E92DEA7D1A7ABBF300019861 /* OBJCFuture.swift in Sources */,
 				E9DF0837194470190083F7F2 /* Promise.swift in Sources */,
 				E9D923AC1A6CE29A00CADD9F /* InvalidationToken.swift in Sources */,
 				E907D1DE1A6AE4A000AB8075 /* Semaphore.swift in Sources */,
@@ -258,6 +275,7 @@
 				E9D923AE1A6CE69B00CADD9F /* InvalidationTokenTests.swift in Sources */,
 				E9DF0828194470060083F7F2 /* BrightFuturesTests.swift in Sources */,
 				E9319EA41A397D2C00A0604A /* QueueTests.swift in Sources */,
+				E92DEA801A7ABF7700019861 /* OBJCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +411,7 @@
 		E9DF082F194470060083F7F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -405,12 +424,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrightFuturesTests/BrightFuturesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E9DF0830194470060083F7F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -419,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrightFuturesTests/BrightFuturesTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
