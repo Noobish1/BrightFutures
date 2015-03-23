@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		E9039ADD1A45DF8D000DD6F1 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */; };
 		E907D1DE1A6AE4A000AB8075 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907D1DD1A6AE4A000AB8075 /* Semaphore.swift */; };
-		E92DEA801A7ABF7700019861 /* OBJCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E92DEA7F1A7ABF7700019861 /* OBJCTests.m */; };
+		E90BC9001AC0A52C0047F322 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90BC8FF1AC0A52C0047F322 /* Helpers.swift */; };
+		E92DEA801A7ABF7700019861 /* BFFutureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E92DEA7F1A7ABF7700019861 /* BFFutureTests.m */; };
 		E9319EA41A397D2C00A0604A /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9319EA31A397D2C00A0604A /* QueueTests.swift */; };
 		E979E5F41975B1AA007FE914 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E979E5F31975B1AA007FE914 /* FutureUtils.swift */; };
 		E9B1A0E91A7C019E0006D9E4 /* BrightFutures-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B1A0E61A7BFB120006D9E4 /* BrightFutures-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +21,7 @@
 		E9D923AE1A6CE69B00CADD9F /* InvalidationTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D923AD1A6CE69B00CADD9F /* InvalidationTokenTests.swift */; };
 		E9D7CBDC1A82987A00973A00 /* BFPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7CBDB1A82987A00973A00 /* BFPromise.swift */; };
 		E9D7CBDE1A82989700973A00 /* BFResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7CBDD1A82989700973A00 /* BFResult.swift */; };
+		E9D923AE1A6CE69B00CADD9F /* InvalidationTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D923AD1A6CE69B00CADD9F /* InvalidationTokenTests.swift */; };
 		E9DF0821194470060083F7F2 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DF0815194470060083F7F2 /* BrightFutures.framework */; };
 		E9DF0828194470060083F7F2 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF0827194470060083F7F2 /* BrightFuturesTests.swift */; };
 		E9DF0835194470190083F7F2 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF0831194470190083F7F2 /* ExecutionContext.swift */; };
@@ -41,8 +43,9 @@
 /* Begin PBXFileReference section */
 		E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		E907D1DD1A6AE4A000AB8075 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
+		E90BC8FF1AC0A52C0047F322 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E92DEA7E1A7ABF7700019861 /* BrightFuturesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrightFuturesTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		E92DEA7F1A7ABF7700019861 /* OBJCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBJCTests.m; sourceTree = "<group>"; };
+		E92DEA7F1A7ABF7700019861 /* BFFutureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFFutureTests.m; sourceTree = "<group>"; };
 		E9319EA31A397D2C00A0604A /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		E979E5F31975B1AA007FE914 /* FutureUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureUtils.swift; sourceTree = "<group>"; };
 		E9B1A0E61A7BFB120006D9E4 /* BrightFutures-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrightFutures-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -83,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90BC8FC1AC0A4A80047F322 /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				E92DEA7F1A7ABF7700019861 /* BFFutureTests.m */,
+			);
+			name = "Objective-C";
+			sourceTree = "<group>";
+		};
 		E92DEA7B1A7ABBD500019861 /* Objective-C */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,11 +152,12 @@
 		E9DF0824194470060083F7F2 /* BrightFuturesTests */ = {
 			isa = PBXGroup;
 			children = (
+				E90BC8FC1AC0A4A80047F322 /* Objective-C */,
+				E90BC8FF1AC0A52C0047F322 /* Helpers.swift */,
 				E9DF0827194470060083F7F2 /* BrightFuturesTests.swift */,
 				E9DF0825194470060083F7F2 /* Supporting Files */,
 				E9319EA31A397D2C00A0604A /* QueueTests.swift */,
 				E9039ADC1A45DF8D000DD6F1 /* ResultTests.swift */,
-				E92DEA7F1A7ABF7700019861 /* OBJCTests.m */,
 				E9D923AD1A6CE69B00CADD9F /* InvalidationTokenTests.swift */,
 				E92DEA7E1A7ABF7700019861 /* BrightFuturesTests-Bridging-Header.h */,
 			);
@@ -288,10 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9039ADD1A45DF8D000DD6F1 /* ResultTests.swift in Sources */,
+				E90BC9001AC0A52C0047F322 /* Helpers.swift in Sources */,
 				E9D923AE1A6CE69B00CADD9F /* InvalidationTokenTests.swift in Sources */,
 				E9DF0828194470060083F7F2 /* BrightFuturesTests.swift in Sources */,
 				E9319EA41A397D2C00A0604A /* QueueTests.swift in Sources */,
-				E92DEA801A7ABF7700019861 /* OBJCTests.m in Sources */,
+				E92DEA801A7ABF7700019861 /* BFFutureTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

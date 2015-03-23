@@ -916,28 +916,6 @@ extension BrightFuturesTests {
     }
 }
 
-/**
- * This extension contains utility methods used in the tests above
- */
-extension XCTestCase {
-    func expectation() -> XCTestExpectation {
-        return self.expectationWithDescription("no description")
-    }
-    
-    func failingFuture<U>() -> Future<U> {
-        return future { error in
-            usleep(arc4random_uniform(100))
-            return .Failure(NSError(domain: "failedFuture", code: 0, userInfo: nil))
-        }
-    }
-    
-    func succeedingFuture<U>(val: U) -> Future<U> {
-        return future { _ in
-            usleep(arc4random_uniform(100))
-            return .Success(Box(val))
-        }
-    }
-}
 
 func fibonacci(n: Int) -> Int {
     switch n {
