@@ -8,11 +8,13 @@
 
 import Foundation
 
-public let InvalidationTokenInvalid = 1
-
 public protocol InvalidationTokenType {
     var isInvalid : Bool { get }
     
+    /**
+     * This future should fail when the token invalidates.
+     * This future never succeeds
+     */
     var future: Future<Void> { get }
     
     // The synchronous context on which the invalidation and callbacks are executed

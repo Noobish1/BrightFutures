@@ -59,7 +59,7 @@ func executionContextForCurrentContext() -> ExecutionContext {
 public let BrightFuturesErrorDomain = "nl.thomvis.BrightFutures"
 
 public enum ErrorCode: Int {
-    case NoSuchElement
+    case NoSuchElement = 1
     case InvalidationTokenInvalidated
     
     var errorDescription: String {
