@@ -1,7 +1,7 @@
 BrightFutures
 =============
 
-BrightFutures is a simple Futures &amp; Promises library for iOS and OS X written in Swift.
+BrightFutures is a simple Futures &amp; Promises library for iOS and OS X written in Swift (and [Objective-C](README.md#objective-c-support)).
 
 BrightFutures offers an alternative to success and failure blocks that are often used to communicate the result of an asynchronous operation. Instead, those operations can immediately return a `Future`, which serves as a _ticket_ for the eventual resulting value (or failure). The user of the operation can add callbacks to the `Future` object, pass it a long and compose it in meaningful (functional) ways.
 
@@ -293,6 +293,11 @@ By invalidating the token on every reuse, we prevent that the image of the previ
 Invalidation tokens _do not_ cancel the task that the future represents. That is a different problem. With invalidation tokens, the result is merely ignored. The callbacks are invoked as soon as the token is invalidated, which is typically before the original future is completed, or if the original future is completed. Invalidating a token after the original future completed does nothing.
 
 If you are looking for a way to cancel a running task, you should look into using [NSProgress](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/Reference/Reference.html) (or [https://github.com/Thomvis/GoodProgress](https://github.com/Thomvis/GoodProgress) if you're looking for a nice Swift wrapper).
+
+## Objective-C support
+BrightFutures includes an Objective-C compatibility layer that enables usage of the library in Objective-C projects. The compatibility layer is written in Swift and wraps around the core types, _erasing_ all Swift-only features such as generics and enums. The tests for the compatibility layer are written in Objective-C to ensure a good developer experience from Objective-C as well.
+
+The design and behavior of BrightFutures will primarily be developed with Swift in mind. Full Objective-C compatiblity will be strived for, but may come at a performance or usability penalty. However, we think BrightFutures' Objective-C API as it is now works great and test show the performance is comparable.
 
 ## Credits
 
