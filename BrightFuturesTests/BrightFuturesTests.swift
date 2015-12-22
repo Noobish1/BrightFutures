@@ -452,7 +452,7 @@ extension BrightFuturesTests {
             XCTAssert(false, "map should not be evaluated because of failure above")
         }.map { number in
             XCTAssert(false, "this map should also not be evaluated because of failure above")
-        }.onFailure { error in
+        }.onFailure { (error:NSError) -> Void in
             XCTAssert(error.domain == "Tests")
             e.fulfill()
         }
@@ -485,7 +485,7 @@ extension BrightFuturesTests {
     func testSkippedRecover() {
         let e = self.expectation()
         
-        future { _ in
+        future {
             3
         }.recover { _ in
             XCTFail("recover task should not be executed")
