@@ -52,8 +52,8 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     /// If the given closure throws, returns an error
     /// from this future. If this future fails, the returned future fails with the same error.
     /// The closure is executed on the given context. If no context is given, the behavior is defined by the default threading model (see README.md)
-    public func map<U>(context: ExecutionContext, f: Value.Value throws -> U) -> Future<U, Value.Error> {
-        return self.flatMap(context) { (value:Value.Value)->Result<U, Value.Error> in
+    public func map<U>(context: ExecutionContext, f: Value.Value throws -> U) -> Future<U, AnyError> {
+        return self.flatMap(context) { (value:Value.Value)->Result<U, AnyError> in
             do {
                 return Result(value: try f(value))
             } catch let e as AnyError {
@@ -67,7 +67,7 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     /// See `map<U>(context c: ExecutionContext, f: (T) -> U) -> Future<U>`
     /// If the given closure throws, returns an error
     /// The given closure is executed according to the default threading model (see README.md)
-    public func map<U>(f: Value.Value throws -> U) -> Future<U, Value.Error> {
+    public func map<U>(f: Value.Value throws -> U) -> Future<U, AnyError> {
         return self.map(DefaultThreadingModel(), f: f)
     }
     
@@ -102,7 +102,7 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     /// should only be executed if the first (this future) fails.
     /// The closure is executed on the given context. If no context is given, the behavior is defined by the default threading model (see README.md)
     public func recoverWith<E1: ErrorType>(context c: ExecutionContext = DefaultThreadingModel(), task: ErrorType -> Future<Value.Value, E1>) -> Future<Value.Value, E1> {
-        return recoverWith(context: c) { (error:Value.Error) -> Future<Value.Value, E1> in
+        return recoverWith(context: c) { (error:AnyError) -> Future<Value.Value, E1> in
             task(error.cause)
         }
     }
@@ -110,7 +110,7 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     /// See `mapError<E1>(context c: ExecutionContext, f: ErrorType -> E1) -> Future<T, E1>`
     /// The given closure is executed according to the default threading model (see README.md)
     public func mapError<E1: ErrorType>(f: ErrorType -> E1) -> Future<Value.Value, E1> {
-        return mapError { (error:Value.Error) -> E1 in
+        return mapError { (error:AnyError) -> E1 in
             f(error.cause)
         }
     }
@@ -119,7 +119,7 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     /// from this future. If this future succeeds, the returned future succeeds with the same value and the closure is not executed.
     /// The closure is executed on the given context.
     public func mapError<E1: ErrorType>(context: ExecutionContext, f: ErrorType -> E1) -> Future<Value.Value, E1> {
-        return mapError(context) { (error:Value.Error) -> E1 in
+        return mapError(context) { (error:AnyError) -> E1 in
             f(error.cause)
         }
     }
