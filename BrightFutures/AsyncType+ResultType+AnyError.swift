@@ -126,7 +126,7 @@ public extension AsyncType where Value: ResultType, Value.Error == AnyError {
     
     /// Returns a future that succeeds with a tuple consisting of the success value of this future and the success value of the given future
     /// If either of the two futures fail, the returned future fails with the failure of this future or that future (in this order)
-    public func zip<U>(that: Future<U, Value.Error>) -> Future<(Value.Value,U), AnyError> {
+    public func zip<U>(that: Future<U, AnyError>) -> Future<(Value.Value,U), AnyError> {
         return flatMap(ImmediateExecutionContext) { thisVal -> Future<(Value.Value,U), AnyError> in
             return that.map(ImmediateExecutionContext) { thatVal in
                 return (thisVal, thatVal)
