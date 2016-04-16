@@ -52,7 +52,7 @@ public func toContext(queue: dispatch_queue_t) -> ExecutionContext {
 
 typealias ThreadingModel = () -> ExecutionContext
 
-var DefaultThreadingModel: ThreadingModel = defaultContext
+public var DefaultThreadingModel: ThreadingModel = defaultContext
 
 /// Defines BrightFutures' default threading behavior:
 /// - if on the main thread, `Queue.main.context` is returned
