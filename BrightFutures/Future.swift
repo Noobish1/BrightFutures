@@ -127,7 +127,7 @@ public final class Future<T, E: ErrorType>: Async<Result<T, E>> {
         super.init(result: Result<T, E>(value: value), delay: delay)
     }
     
-    public init(result: Result<T, E>, delay: NSTimeInterval) {
+    public required init(result: Result<T, E>, delay: NSTimeInterval) {
         super.init(result: result, delay: delay)
     }
     
