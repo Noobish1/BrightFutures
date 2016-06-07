@@ -734,6 +734,21 @@ extension BrightFuturesTests {
         self.waitForExpectationsWithTimeout(2, handler: nil)
     }
     
+    func testDelayChaining() {
+        let e = self.expectation()
+        let t0 = CACurrentMediaTime()
+        future { return }
+            .delay(1)
+            .andThen { _ in XCTAssert(CACurrentMediaTime() - t0 >= 1) }
+            .delay(1)
+            .andThen { _ in
+                XCTAssert(CACurrentMediaTime() - t0 >= 2)
+                e.fulfill()
+            }
+
+        self.waitForExpectationsWithTimeout(3, handler: nil)
+    }
+
     func testFlatMap() {
         let e = self.expectation()
         
@@ -875,6 +890,30 @@ extension BrightFuturesTests {
         }
 
         self.waitForExpectationsWithTimeout(2, handler: nil)
+    }
+    
+    func testUtilsLargeSequence() {
+        let promises = (1...500).map { _ in Promise<Int,NoError>() }
+        let futures = promises.map { $0.future }
+        
+        let e = self.expectation()
+        
+        
+        futures.sequence().onSuccess { nums in
+            for (index, num) in nums.enumerate() {
+                XCTAssertEqual(index, num)
+            }
+            
+            e.fulfill()
+        }
+        
+        for (i, promise) in promises.enumerate() {
+            Queue.global.async {
+                promise.success(i)
+            }
+        }
+        
+        self.waitForExpectationsWithTimeout(10, handler: nil)
     }
     
     func testUtilsFold() {
